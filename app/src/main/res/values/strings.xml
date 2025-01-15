@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Игра в кальмара кликер</string>
+    <string name="click_img_content_description">Изображение скуфа</string>
 </resources>
