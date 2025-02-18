@@ -27,6 +27,7 @@ import java.util.List;
 
 import ru.plumsoftware.squid.game.R;
 import ru.plumsoftware.squid.game.adapter.BackAdapter;
+import ru.plumsoftware.squid.game.data.AdsIds;
 import ru.plumsoftware.squid.game.data.Data;
 import ru.plumsoftware.squid.game.dialogs.CustomProgressDialog;
 import ru.plumsoftware.squid.game.heroes.Back;
@@ -150,7 +151,7 @@ public class BackgroundShopActivity extends AppCompatActivity {
         sharedPreferences.edit().putBoolean("isShowAppOpen", false).apply();
         if (mInterstitialAdLoader != null) {
             final AdRequestConfiguration adRequestConfiguration =
-                    new AdRequestConfiguration.Builder("R-M-13696131-1").build();
+                    new AdRequestConfiguration.Builder(AdsIds.BACKGROUND_SHOP_ACTIVITY_ADS_ID).build();
             mInterstitialAdLoader.loadAd(adRequestConfiguration);
         }
     }

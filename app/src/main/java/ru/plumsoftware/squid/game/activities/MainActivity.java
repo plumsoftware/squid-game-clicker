@@ -46,6 +46,7 @@ import com.yandex.mobile.ads.rewarded.RewardedAdLoadListener;
 import com.yandex.mobile.ads.rewarded.RewardedAdLoader;
 
 import ru.plumsoftware.squid.game.R;
+import ru.plumsoftware.squid.game.data.AdsIds;
 import ru.plumsoftware.squid.game.data.Data;
 import ru.plumsoftware.squid.game.dialogs.CustomProgressDialog;
 
@@ -60,8 +61,7 @@ public class MainActivity extends AppCompatActivity {
     @Nullable
     private RewardedAdLoader mRewardedAdLoader = null;
     private AppOpenAdLoader appOpenAdLoader = null;
-    private final String AD_UNIT_ID = "R-M-13696131-3";
-    private final AdRequestConfiguration adRequestConfiguration = new AdRequestConfiguration.Builder(AD_UNIT_ID).build();
+    private final AdRequestConfiguration adRequestConfiguration = new AdRequestConfiguration.Builder(AdsIds.OPEN_ADS_ID).build();
 
     private AppOpenAd mAppOpenAd = null;
     private CustomProgressDialog progressDialog;
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             bannerHeight = (int) (screenHeight * 0.04);
         }
 
-        mBannerAdView.setAdUnitId("R-M-13696131-2"); //RuStore
+        mBannerAdView.setAdUnitId(AdsIds.BANNER_ADS_ID);
         mBannerAdView.setAdSize(BannerAdSize.inlineSize(MainActivity.this, screenWidth, bannerHeight));
         final AdRequest adRequestB = new AdRequest.Builder().build();
         mBannerAdView.setBannerAdEventListener(new BannerAdEventListener() {
@@ -370,7 +370,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (mRewardedAdLoader != null) {
                     final AdRequestConfiguration adRequestConfiguration =
-                            new AdRequestConfiguration.Builder("R-M-13696131-4").build();
+                            new AdRequestConfiguration.Builder(AdsIds.REWARDED_ADS_ID).build();
                     mRewardedAdLoader.loadAd(adRequestConfiguration);
                 }
             }

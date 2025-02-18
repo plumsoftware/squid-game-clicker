@@ -28,6 +28,7 @@ import java.util.List;
 
 import ru.plumsoftware.squid.game.R;
 import ru.plumsoftware.squid.game.adapter.HeroAdapter;
+import ru.plumsoftware.squid.game.data.AdsIds;
 import ru.plumsoftware.squid.game.data.Data;
 import ru.plumsoftware.squid.game.dialogs.CustomProgressDialog;
 import ru.plumsoftware.squid.game.heroes.Hero;
@@ -158,7 +159,7 @@ public class ShopActivity extends AppCompatActivity {
         sharedPreferences.edit().putBoolean("isShowAppOpen", false).apply();
         if (mInterstitialAdLoader != null) {
             final AdRequestConfiguration adRequestConfiguration =
-                    new AdRequestConfiguration.Builder("R-M-13696131-5").build();
+                    new AdRequestConfiguration.Builder(AdsIds.SHOP_ACTIVITY_ADS_ID).build();
             mInterstitialAdLoader.loadAd(adRequestConfiguration);
         }
     }
