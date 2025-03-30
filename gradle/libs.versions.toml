@@ -7,7 +7,7 @@ appcompat = "1.6.1"
 material = "1.10.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
-mobileads = "7.8.1"
+mobileads = "7.11.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
